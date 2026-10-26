@@ -3,270 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Portfolio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <title>自己紹介サイト | 島根県立大学</title>
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-            --accent-color: #a855f7;
-        }
-
-        * {
+        /* 全体のベース設定（暖色系の優しい背景とフォント） */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: #FFF9F5; /* ごく薄いオレンジがかった白 */
+            color: #4A3B32; /* 温かみのあるダークブラウン */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            line-height: 1.7;
         }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* 背景のグラデーション演出 */
-        .background-glow {
-            position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 70%);
-            z-index: -1;
-            filter: blur(80px);
-        }
-
-        /* ヘッダー */
+        /* ヘッダーセクション（夕暮れや温もりを感じさせるグラデーション） */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 400;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--text-main);
-        }
-
-        /* ヒーローセクション */
-        .hero {
-            max-width: 900px;
-            margin: 6rem auto 4rem;
+            background: linear-gradient(135deg, #FF7B54, #FFB26B);
+            color: #FFFFFF;
             text-align: center;
-            padding: 0 1.5rem;
+            padding: 60px 20px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            letter-spacing: 0.05em;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero h1 span {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
+        header p {
+            margin: 0;
             font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            opacity: 0.95;
         }
 
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
+        /* メインコンテンツのコンテナ */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .btn {
-            padding: 0.8rem 2rem;
+        /* 各セクションのカードデザイン */
+        section {
+            background-color: #FFFFFF;
             border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s, opacity 0.2s;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(255, 123, 84, 0.08);
+            border-left: 6px solid #FF7B54;
         }
 
-        .btn-primary {
-            background: var(--accent-gradient);
-            color: white;
-            box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.4);
+        h2 {
+            color: #D35400;
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #FADBD8;
+            padding-bottom: 8px;
         }
 
-        .btn-secondary {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-main);
-            backdrop-filter: blur(10px);
+        /* リストのスタイル */
+        ul {
+            padding-left: 20px;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
-        /* カードセクション */
-        .features {
-            max-width: 1200px;
-            margin: 6rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(168, 85, 247, 0.3);
-        }
-
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent-gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        li {
+            margin-bottom: 8px;
         }
 
         /* フッター */
         footer {
             text-align: center;
-            padding: 3rem 2rem;
-            color: var(--text-muted);
+            padding: 20px;
+            background-color: #FCE4D6;
+            color: #7E5109;
             font-size: 0.9rem;
-            border-top: 1px solid var(--card-border);
-            margin-top: 4rem;
+            margin-top: 40px;
         }
 
         /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 15px;
             }
-            .hero {
-                margin-top: 4rem;
+            header h1 {
+                font-size: 1.8rem;
+            }
+            section {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="background-glow"></div>
-
     <!-- ヘッダー -->
     <header>
-        <div class="logo">BRAND.</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <h1>Welcome to My Portfolio</h1>
+        <p>島根県立大学での学びと日々の記録</p>
     </header>
 
-    <!-- メインビジュアル -->
-    <main>
-        <section class="hero">
-            <div class="hero-badge">✨ Next Generation Design</div>
-            <h1>未来を形作る、<br><span>洗練されたデジタル体験</span></h1>
-            <p>最先端のテクノロジーと美しいデザインを融合させ、ユーザーの心を動かすWEBプロダクトを創造します。</p>
-            <div class="btn-group">
-                <a href="#contact" class="btn btn-primary">プロジェクトを始める</a>
-                <a href="#about" class="btn btn-secondary">詳しく見る</a>
-            </div>
+    <!-- メインコンテンツ -->
+    <div class="container">
+
+        <!-- 自己紹介セクション -->
+        <section>
+            <h2>自己紹介</h2>
+            <p>こんにちは！私のポートフォリオサイトへようこそ。<br>
+            人との繋がりや温かいコミュニケーションを大切にしながら、日々新しいことに挑戦しています。趣味や興味のあることについて、少しずつ発信していきたいと思っています。</p>
         </section>
 
-        <!-- 特徴カード -->
-        <section class="features">
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>高速パフォーマンス</h3>
-                <p>無駄を削ぎ落としたクリーンなコードにより、ストレスのない超高速な読み込みを実現します。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎨</div>
-                <h3>モダンデザイン</h3>
-                <p>トレンドを押さえたダークモードとグラデーションを基調に、圧倒的な高級感を演出します。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>完全レスポンシブ</h3>
-                <p>スマートフォン、タブレット、PCなど、あらゆるデバイスの画面サイズに美しく最適化されます。</p>
-            </div>
+        <!-- 島根県立大学での学びセクション -->
+        <section>
+            <h2>島根県立大学での学び</h2>
+            <p>現在は<strong>島根県立大学</strong>に在籍し、地域の魅力や社会の仕組みについて日々学んでいます。</p>
+            <ul>
+                <li><strong>キャンパスライフ：</strong> 自然豊かな環境の中、仲間たちと刺激し合いながら充実した学生生活を送っています。</li>
+                <li><strong>関心のある分野：</strong> 地域活性化や人々の暮らしを豊かにするアイデアについて、実践的に研究・学習を進めています。</li>
+                <li><strong>大学の魅力：</strong> アットホームな雰囲気で、先生方や学生同士の距離が近く、親身に向き合える環境が整っています。</li>
+            </ul>
         </section>
-    </main>
+
+        <!-- 今後の目標セクション -->
+        <section>
+            <h2>これからやりたいこと</h2>
+            <p>大学での学びを深めつつ、Web制作やデザインなど、自分の「表現できる幅」をどんどん広げていきたいです。このサイトもこれからもっとブラッシュアップしていく予定です！</p>
+        </section>
+
+    </div>
 
     <!-- フッター -->
     <footer>
-        <p>&copy; 2026 BRAND. All rights reserved.</p>
+        <p>&copy; 2026 My Self-Introduction. All Rights Reserved.</p>
     </footer>
 
 </body>
