@@ -3,156 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & SGML について</title>
+    <title>自己紹介サイト | 島根県立大学</title>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --primary-light: #eff6ff;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e5e7eb;
-        }
-
-        * {
-            box-sizing: border-box;
+        /* 全体のベース設定（暖色系の優しい背景とフォント） */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: #FFF9F5; /* ごく薄いオレンジがかった白 */
+            color: #4A3B32; /* 温かみのあるダークブラウン */
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
             line-height: 1.7;
-            padding: 2rem 1rem;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        /* ヘッダーセクション（夕暮れや温もりを感じさせるグラデーション） */
         header {
+            background: linear-gradient(135deg, #FF7B54, #FFB26B);
+            color: #FFFFFF;
             text-align: center;
-            margin-bottom: 2.5rem;
+            padding: 60px 20px;
         }
 
         header h1 {
-            font-size: 2.25rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            letter-spacing: 0.05em;
         }
 
         header p {
-            color: var(--text-muted);
+            margin: 0;
             font-size: 1.1rem;
+            opacity: 0.95;
         }
 
-        .card {
-            background-color: var(--card-bg);
+        /* メインコンテンツのコンテナ */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 各セクションのカードデザイン */
+        section {
+            background-color: #FFFFFF;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(255, 123, 84, 0.08);
+            border-left: 6px solid #FF7B54;
         }
 
         h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-light);
+            color: #D35400;
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #FADBD8;
+            padding-bottom: 8px;
         }
 
-        p {
-            margin-bottom: 1.25rem;
+        /* リストのスタイル */
+        ul {
+            padding-left: 20px;
         }
 
-        strong {
-            background: linear-gradient(transparent 60%, var(--primary-light) 40%);
-            font-weight: 600;
+        li {
+            margin-bottom: 8px;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px dashed var(--primary-color);
-            transition: opacity 0.2s;
-        }
-
-        a:hover {
-            opacity: 0.7;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .feature-item {
-            background-color: var(--primary-light);
-            padding: 1rem 1.25rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--text-main);
-        }
-
+        /* フッター */
         footer {
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-top: 3rem;
+            padding: 20px;
+            background-color: #FCE4D6;
+            color: #7E5109;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 15px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- ヘッダー -->
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>島根県立大学での学びと日々の記録</p>
+    </header>
+
+    <!-- メインコンテンツ -->
     <div class="container">
-        <header>
-            <h1>Webテクノロジーの基礎</h1>
-            <p>HTML と SGML の概要について</p>
-        </header>
 
-        <main>
-            <!-- HTMLセクション -->
-            <article class="card">
-                <h2>HyperText Markup Language (HTML)</h2>
-                <p>
-                    HTMLは、<a href="http://ja.wikipedia.org/wiki/SGML" target="_blank" rel="noopener noreferrer">SGML</a>アプリケーションの一つで、ハイパーテキストを利用してワールドワイドウェブ上で情報を発信するために作られ、ワールドワイドウェブの<strong>基幹的役割</strong>をなしている。
-                </p>
-                <p>
-                    情報を発信するための文書構造を定義するために使われ、ある程度機械が理解可能な言語である。
-                </p>
+        <!-- 自己紹介セクション -->
+        <section>
+            <h2>自己紹介</h2>
+            <p>こんにちは！私のポートフォリオサイトへようこそ。<br>
+            人との繋がりや温かいコミュニケーションを大切にしながら、日々新しいことに挑戦しています。趣味や興味のあることについて、少しずつ発信していきたいと思っています。</p>
+        </section>
 
-                <div class="features">
-                    <div class="feature-item">📸 写真・画像の埋め込み</div>
-                    <div class="feature-item">📝 ユーザー入力用フォームの作成</div>
-                    <div class="feature-item">🔗 ハイパーテキストによるページ間連携</div>
-                </div>
-            </article>
+        <!-- 島根県立大学での学びセクション -->
+        <section>
+            <h2>島根県立大学での学び</h2>
+            <p>現在は<strong>島根県立大学</strong>に在籍し、地域の魅力や社会の仕組みについて日々学んでいます。</p>
+            <ul>
+                <li><strong>キャンパスライフ：</strong> 自然豊かな環境の中、仲間たちと刺激し合いながら充実した学生生活を送っています。</li>
+                <li><strong>関心のある分野：</strong> 地域活性化や人々の暮らしを豊かにするアイデアについて、実践的に研究・学習を進めています。</li>
+                <li><strong>大学の魅力：</strong> アットホームな雰囲気で、先生方や学生同士の距離が近く、親身に向き合える環境が整っています。</li>
+            </ul>
+        </section>
 
-            <!-- SGMLセクション -->
-            <article class="card">
-                <h2>SGML について</h2>
-                <p>
-                    SGML（Standard Generalized Markup Language）は、文書の構造を記述するためのマークアップ言語の国際標準規格（ISO 8879）です。
-                </p>
-                <p>
-                    HTMLやXMLの母体となった言語であり、汎用性が高く、厳密な文書構造の定義を可能にしています。
-                </p>
-            </article>
-        </main>
+        <!-- 今後の目標セクション -->
+        <section>
+            <h2>これからやりたいこと</h2>
+            <p>大学での学びを深めつつ、Web制作やデザインなど、自分の「表現できる幅」をどんどん広げていきたいです。このサイトもこれからもっとブラッシュアップしていく予定です！</p>
+        </section>
 
-        <footer>
-            <p>&copy; 2026 Web Tech Overview</p>
-        </footer>
     </div>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 My Self-Introduction. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
