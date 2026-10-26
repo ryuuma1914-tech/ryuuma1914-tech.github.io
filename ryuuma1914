@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & SGML について</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #eff6ff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        strong {
+            background: linear-gradient(transparent 60%, var(--primary-light) 40%);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed var(--primary-color);
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            background-color: var(--primary-light);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Webテクノロジーの基礎</h1>
+            <p>HTML と SGML の概要について</p>
+        </header>
+
+        <main>
+            <!-- HTMLセクション -->
+            <article class="card">
+                <h2>HyperText Markup Language (HTML)</h2>
+                <p>
+                    HTMLは、<a href="http://ja.wikipedia.org/wiki/SGML" target="_blank" rel="noopener noreferrer">SGML</a>アプリケーションの一つで、ハイパーテキストを利用してワールドワイドウェブ上で情報を発信するために作られ、ワールドワイドウェブの<strong>基幹的役割</strong>をなしている。
+                </p>
+                <p>
+                    情報を発信するための文書構造を定義するために使われ、ある程度機械が理解可能な言語である。
+                </p>
+
+                <div class="features">
+                    <div class="feature-item">📸 写真・画像の埋め込み</div>
+                    <div class="feature-item">📝 ユーザー入力用フォームの作成</div>
+                    <div class="feature-item">🔗 ハイパーテキストによるページ間連携</div>
+                </div>
+            </article>
+
+            <!-- SGMLセクション -->
+            <article class="card">
+                <h2>SGML について</h2>
+                <p>
+                    SGML（Standard Generalized Markup Language）は、文書の構造を記述するためのマークアップ言語の国際標準規格（ISO 8879）です。
+                </p>
+                <p>
+                    HTMLやXMLの母体となった言語であり、汎用性が高く、厳密な文書構造の定義を可能にしています。
+                </p>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Web Tech Overview</p>
+        </footer>
+    </div>
+
+</body>
+</html>
